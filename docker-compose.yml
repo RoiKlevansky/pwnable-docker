@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  pwn:
+    build: .
+    entrypoint: /bin/zsh
+    restart: "no"
+    stdin_open: true            # docker run -i
+    tty: true                   # docker run -t
+    hostname: pwnbox
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined      # This will turn off seccomp confinement for 
+                                # the container, which is kinda bad for
+                                # sandboxing. May need to rethink this in
+                                # the future.
+    volumes:
+      - pwnhome:/home
+volumes:
+  pwnhome: {}
