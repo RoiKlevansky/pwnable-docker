@@ -31,8 +31,8 @@ Some tools integrated image for easy CTF or education. It also could be used for
 ### Clone this project
 
 ```bash
-> git clone https://github.com/RoiKlevansky/pwnable-docker.git
-> cd pwnable-docker
+> git clone https://github.com/RoiKlevansky/pwnabox.git
+> cd pwnabox
 ```
 
 ### Installation
