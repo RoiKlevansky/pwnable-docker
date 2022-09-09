@@ -102,10 +102,11 @@ WORKDIR /home/${user}
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
     -p git \
     -p https://github.com/zsh-users/zsh-autosuggestions \
-    -p https://github.com/zsh-users/zsh-completions
+    -p https://github.com/zsh-users/zsh-completions \
+    -p https://github.com/zsh-users/zsh-syntax-highlighting
 
 # Set GNU Screen to use zsh, do not override config if exists
-RUN if [[ ! -e ~/.screenrc ]]; then echo 'shell "/usr/bin/zsh"' > ~/.screenrc; fi
+RUN if [ ! -e ~/.screenrc ]; then echo 'shell "/usr/bin/zsh"' > ~/.screenrc; fi
 
 # Remove nopasswd from sudo
 RUN sudo sed -i '$ d' /etc/sudoers
