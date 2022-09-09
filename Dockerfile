@@ -45,6 +45,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     strace \
     ltrace \
     htop \
+    screen \
     file \
     upx-ucl \
     netcat \
@@ -102,6 +103,9 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     -p git \
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions
+
+# Set GNU Screen to use zsh, do not override config if exists
+RUN if [[ ! -e ~/.screenrc ]]; then echo 'shell "/usr/bin/zsh"' > ~/.screenrc; fi
 
 # Remove nopasswd from sudo
 RUN sudo sed -i '$ d' /etc/sudoers
