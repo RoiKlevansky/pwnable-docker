@@ -65,17 +65,21 @@ RUN groupadd -g ${gid} ${group} && useradd -rm -s /bin/zsh -g ${gid} -G sudo -u 
 USER ${user}
 WORKDIR /home/${user}
 
-# Create user "Source" dir and cd
+# Create user "Source" dir
 RUN mkdir /home/${user}/Source
-WORKDIR /home/${user}/Source
+
+# Create dir for tools under opt and cd
+RUN sudo mkdir /opt/tools
+RUN sudo chown ${uid}:${gid} /opt/tools
+WORKDIR /opt/tools
 
 # Install Pwndbg + GEF + Peda
 RUN git clone https://github.com/RoiKlevansky/gdb-peda-pwndbg-gef.git
 WORKDIR gdb-peda-pwndbg-gef
-RUN ./install.sh /home/${user}/Source
+RUN ./install.sh /opt/tools
 
 # Radare2
-WORKDIR /home/${user}/Source
+WORKDIR /opt/tools
 RUN git clone https://github.com/radare/radare2 
 RUN ./radare2/sys/install.sh
 
@@ -90,6 +94,7 @@ RUN sudo gem install pwntools
 RUN sudo gem install one_gadget
 
 # Install oh-my-zsh
+WORKDIR /home/${user}
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
     -p git \
     -p https://github.com/zsh-users/zsh-autosuggestions \
@@ -97,6 +102,4 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 
 # Remove nopasswd from sudo
 RUN sudo sed -i '$ d' /etc/sudoers
-
-WORKDIR /home/${user}
 
