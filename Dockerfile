@@ -20,6 +20,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     libssl-dev \
     libffi-dev \
     libglib2.0-dev \
+    libseccomp-dev \
     libc6-dbg \
     build-essential \
     binutils \
@@ -28,6 +29,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     gdb \
     wget \
     curl \
+    ssh \
     gcc \
     make \
     git \
@@ -36,6 +38,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     libc6-dbg:i386 \
     libncurses5:i386 \
     libstdc++6:i386 \
+    libseccomp-dev:i386 \
     ca-certificates \
     patch \
     pkg-config \
