@@ -1,32 +1,61 @@
-# Pwnable-Docker
+# Pwnabox - pwning with whales!
 
 Some tools integrated image for easy CTF or education. It also could be used for sandboxing.
 
-## How To Run
-
-> $ git clone https://github.com/Ch1keen/pwnable-docker  
-> $ docker build -t ch1keen/pwnable ./pwnable-docker  
-> $ docker run -it --cap-add=SYS_PTRACE --security-opt seccomp=unconfined ch1keen/pwnable  
-  
-(See what that fucking options mean : https://stackoverflow.com/questions/19215177/how-to-solve-ptrace-operation-not-permitted-when-trying-to-attach-gdb-to-a-pro/32274645)
-
 ## Included tools
 
+* Pwntools (https://github.com/Gallopsled/pwntools)
+* pwntools-ruby (https://github.com/peter50216/pwntools-ruby)
 * Radare2 (https://github.com/radare/radare2)
   * r2pm
   * r2dec (https://github.com/wargio/r2dec-js)
-* Pwntools (https://github.com/Gallopsled/pwntools)
-* pwntools-ruby (https://github.com/peter50216/pwntools-ruby)
-* Peda-heap (https://github.com/Mipu94/peda-heap)
 * one_gadget (https://github.com/david942j/one_gadget)
+* GDB addons
+  * pwndbg (https://github.com/pwndbg/pwndbg)
+  * GEF (https://github.com/hugsy/gef)
+  * Peda (https://github.com/longld/peda)
+    * Peda-heap (https://github.com/Mipu94/peda-heap)
 * tracers
   * strace
   * ltrace
 * packer
   * upx
 
-## Further works
+## Getting Started
 
-* Add various tools
-* Make user select pwndbg or gdb-peda (or both!)
-* Supporting QEMU
+### Dependencies:
+
+- Docker
+- Docker Compose
+
+### Clone this project
+
+```bash
+> git clone https://github.com/RoiKlevansky/pwnable-docker.git
+> cd pwnable-docker
+```
+
+### Installation
+
+```bash
+> docker-compose build
+```
+
+### Running
+
+```bash
+> docker-compose run pwn
+```
+
+## Special Commands
+
+This image uses a script named [gdb-peda-pwndbg-gef](https://github.com/RoiKlevansky/gdb-peda-pwndbg-gef) which lets you easly run peda, pwndbg and gef
+on the same machine. Use one of the commands below to launch the corresponding GDB environment:
+
+```bash
+> gdb-peda
+> gdb-peda-intel
+> gdb-peda-arm
+> gdb-pwndbg
+> gdb-gef
+```
