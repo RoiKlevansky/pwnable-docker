@@ -51,6 +51,8 @@ keep note of the name as you will need to use it when getting in.
 > docker exec -it <Containter Name> zsh
 ```
 
+Default crednitals are: ```pwner:pwner```.
+
 ## Special Commands
 
 This image uses a script named [gdb-peda-pwndbg-gef](https://github.com/RoiKlevansky/gdb-peda-pwndbg-gef) which lets you easly run peda, pwndbg and gef
