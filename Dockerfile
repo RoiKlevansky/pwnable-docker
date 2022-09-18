@@ -97,6 +97,9 @@ RUN sudo gem install pwntools
 # one-gadget
 RUN sudo gem install one_gadget
 
+# ROPgadget
+RUN sudo -H python3 -m pip install ROPgadget
+
 # Install oh-my-zsh
 WORKDIR /home/${user}
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \

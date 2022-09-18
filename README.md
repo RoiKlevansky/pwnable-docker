@@ -9,7 +9,8 @@ Some tools integrated image for easy CTF or education. It also could be used for
 * Radare2 (https://github.com/radare/radare2)
   * r2pm
   * r2dec (https://github.com/wargio/r2dec-js)
-* one_gadget (https://github.com/david942j/one_gadget)
+* one\_gadget (https://github.com/david942j/one_gadget)
+* ROPgadget (https://github.com/JonathanSalwan/ROPgadget)
 * GDB addons
   * pwndbg (https://github.com/pwndbg/pwndbg)
   * GEF (https://github.com/hugsy/gef)
