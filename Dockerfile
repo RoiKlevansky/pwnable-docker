@@ -17,6 +17,8 @@ RUN apt -y update && apt install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     python3-setuptools \
+    python2 \
+    python2-dev \
     libssl-dev \
     libffi-dev \
     libglib2.0-dev \
