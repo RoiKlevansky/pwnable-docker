@@ -59,6 +59,10 @@ RUN apt -y update && apt install -y --no-install-recommends \
     less \
     && yes | unminimize && rm -rf /var/lib/apt/lists/*
 
+# Configure /usr/bin/python
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+
 # Install Pwntools
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade pwntools
