@@ -38,9 +38,6 @@ Some tools integrated image for easy CTF or education. It also could be used for
 
 ### Installation
 
-After the command starts it will print the name of the created container,
-keep note of the name as you will need to use it when getting in.
-
 ```bash
 > docker-compose up -d
 ```
@@ -48,7 +45,7 @@ keep note of the name as you will need to use it when getting in.
 ### Running
 
 ```bash
-> docker exec -it <Containter Name> zsh
+> docker exec -it pwnabox zsh
 ```
 
 Default crednitals are: ```pwner:pwner```.

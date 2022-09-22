@@ -1,12 +1,13 @@
 version: "3.9"
 services:
-  pwn:
+  pwnabox:
     build: .
     entrypoint: /bin/zsh
     restart: "no"
     stdin_open: true            # docker run -i
     tty: true                   # docker run -t
-    hostname: pwnbox
+    hostname: pwnabox
+    container_name: pwnabox
     cap_add:
       - SYS_PTRACE
     security_opt:
