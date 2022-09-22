@@ -34,6 +34,7 @@ RUN apt -y update && apt install -y \
     nghttp2 \
     libnghttp2-dev \
     gdb \
+    gdbserver \
     wget \
     curl \
     ssh \

@@ -8,6 +8,8 @@ services:
     tty: true                   # docker run -t
     hostname: pwnabox
     container_name: pwnabox
+    ports:
+      - "2159"
     cap_add:
       - SYS_PTRACE
     security_opt:
