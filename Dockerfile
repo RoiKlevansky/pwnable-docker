@@ -63,7 +63,11 @@ RUN apt -y update && apt install -y \
     zsh \
     man \
     man-db \
+    apt-file \
     && rm -rf /var/lib/apt/lists/*
+
+# Set apt-file cache
+RUN apt-file update
 
 # Configure /usr/bin/python
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 1
