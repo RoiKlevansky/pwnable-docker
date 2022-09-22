@@ -115,8 +115,8 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     -p https://github.com/zsh-users/zsh-completions \
     -p https://github.com/zsh-users/zsh-syntax-highlighting
 
-# Set GNU Screen to use zsh, do not override config if exists
-RUN if [ ! -e ~/.screenrc ]; then echo 'shell "/usr/bin/zsh"' > ~/.screenrc; fi
+# Set GNU Screen to use zsh
+RUN echo 'shell "/usr/bin/zsh"' > ~/.screenrc
 
 # Remove nopasswd from sudo
 RUN sudo sed -i '$ d' /etc/sudoers
