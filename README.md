@@ -16,6 +16,7 @@ Some tools integrated image for easy CTF or education. It also could be used for
   * GEF (https://github.com/hugsy/gef)
   * Peda (https://github.com/longld/peda)
     * Peda-heap (https://github.com/Mipu94/peda-heap)
+* gdbserver
 * tracers
   * strace
   * ltrace
@@ -62,3 +63,9 @@ on the same machine. Use one of the commands below to launch the corresponding G
 > gdb-pwndbg
 > gdb-gef
 ```
+
+## gdbserver
+
+If you'd want to connect to the server from your host machine use port 
+```2159``` which is exposed to your host.
+
