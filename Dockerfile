@@ -17,6 +17,7 @@ RUN dpkg --add-architecture i386
 RUN yes | unminimize
 RUN apt -y update && apt install -y \
     ubuntu-minimal \
+    ubuntu-dev-tools \
     vim \
     python3 \
     python3-dev \
@@ -30,7 +31,6 @@ RUN apt -y update && apt install -y \
     libseccomp-dev \
     libc6-dbg \
     build-essential \
-    binutils \
     nghttp2 \
     libnghttp2-dev \
     gdb \
@@ -47,7 +47,6 @@ RUN apt -y update && apt install -y \
     libstdc++6:i386 \
     libseccomp-dev:i386 \
     ca-certificates \
-    patch \
     pkg-config \
     strace \
     ltrace \
