@@ -7,11 +7,16 @@ ARG passwd=pwner
 ARG group=pwner
 ARG uid=3141
 ARG gid=3141
+ARG DEBIAN_FRONTEND=noninteractive
 
-# Install essential tools and deps
+ENV TZ=Etc/UTC
+
+# Unminimize image and install essential tools and deps
 # dpkg --add-architecture i386 && install *:i386 for 32bit binary execution support
 RUN dpkg --add-architecture i386
-RUN apt -y update && apt install -y --no-install-recommends \
+RUN yes | unminimize
+RUN apt -y update && apt install -y \
+    ubuntu-minimal \
     vim \
     python3 \
     python3-dev \
@@ -57,8 +62,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     zsh \
     man \
     man-db \
-    less \
-    && yes | unminimize && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Configure /usr/bin/python
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 1
