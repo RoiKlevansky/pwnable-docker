@@ -55,6 +55,7 @@ RUN apt -y update && apt install -y \
     screen \
     file \
     upx-ucl \
+    net-tools \
     netcat \
     socat \
     ruby-full \
