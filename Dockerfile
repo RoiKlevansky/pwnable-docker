@@ -47,6 +47,7 @@ RUN apt -y update && apt install -y --no-install-recommends \
     strace \
     ltrace \
     htop \
+    psmisc \
     screen \
     file \
     upx-ucl \
