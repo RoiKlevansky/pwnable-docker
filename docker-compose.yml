@@ -1,13 +1,13 @@
 version: "3.9"
 services:
-  pwnabox:
+  pwnabox-legacy:
     build: .
     entrypoint: /bin/zsh
     restart: "no"
     stdin_open: true            # docker run -i
     tty: true                   # docker run -t
-    hostname: pwnabox
-    container_name: pwnabox
+    hostname: pwnabox-legacy
+    container_name: pwnabox-legacy
     ports:
       - "2159"
     cap_add:
@@ -18,6 +18,6 @@ services:
                                 # sandboxing. May need to rethink this in
                                 # the future.
     volumes:
-      - pwnhome:/home
+      - pwnhome-legacy:/home
 volumes:
-  pwnhome: {}
+  pwnhome-legacy: {}

@@ -1,6 +1,8 @@
 # Pwnabox - pwning with whales!
 
-Some tools integrated image for easy CTF or education. It also could be used for sandboxing.
+Some tools integrated image for easy CTF or education. It also could be used for sandboxing.  
+
+DISCLAIMER: This version of pwnabox is based on Ubuntu 18.04.
 
 ## Included tools
 

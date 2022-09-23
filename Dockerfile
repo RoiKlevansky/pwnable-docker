@@ -1,5 +1,5 @@
-# Install ubuntu 22.04
-FROM ubuntu:22.04
+# Install ubuntu 18.04
+FROM ubuntu:18.04
 
 # Arguments
 ARG user=pwner
@@ -23,8 +23,8 @@ RUN apt -y update && apt install -y \
     python3-dev \
     python3-pip \
     python3-setuptools \
-    python2 \
-    python2-dev \
+    python \
+    python-dev \
     libssl-dev \
     libffi-dev \
     libglib2.0-dev \
@@ -47,6 +47,7 @@ RUN apt -y update && apt install -y \
     libncurses5:i386 \
     libstdc++6:i386 \
     libseccomp-dev:i386 \
+    libssl1.0.0:i386 \
     ca-certificates \
     pkg-config \
     strace \
@@ -108,6 +109,7 @@ RUN r2pm init
 RUN r2pm install r2dec
 
 # Pwntools-ruby
+RUN sudo gem install crabstone -v 4.0.3
 RUN sudo gem install pwntools
 
 # one-gadget
