@@ -56,6 +56,7 @@ RUN apt -y update && apt install -y \
     screen \
     file \
     gawk \
+    hexdiff \
     upx-ucl \
     net-tools \
     netcat \
