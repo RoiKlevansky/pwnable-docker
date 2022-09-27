@@ -55,6 +55,7 @@ RUN apt -y update && apt install -y \
     psmisc \
     screen \
     file \
+    gawk \
     upx-ucl \
     net-tools \
     netcat \
